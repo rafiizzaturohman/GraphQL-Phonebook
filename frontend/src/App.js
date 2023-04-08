@@ -1,13 +1,20 @@
 import './App.css';
-import UserBox from './components/page/UserBox';
 import './components/FontAwesomeIcons'
 import React from 'react';
+import UserBox from './components/page/UserBox';
+import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
+
+
+const client = new ApolloClient({
+  uri: 'http://localhost:3002/graphql',
+  cache: new InMemoryCache()
+})
 
 function App() {
   return (
-    <React.StrictMode>
+    <ApolloProvider client={client}>
       <UserBox />
-    </ React.StrictMode>
+    </ApolloProvider>
   );
 }
 

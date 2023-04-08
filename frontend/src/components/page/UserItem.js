@@ -9,7 +9,7 @@ export default class UserItem extends Component {
         this.state = {
             editCond: false,
             name: props.users.name,
-            phone: props.users.phone 
+            phone: props.users.phone
         }
     }
 
@@ -35,11 +35,13 @@ export default class UserItem extends Component {
                 <div className='container shadow-2xl shadow-slate-300 bg-white/80 rounded-lg w-auto h-auto space-y-2 px-8 py-5' >
                     <div className='flex space-x-3 items-center'>
                         <FontAwesomeIcon icon='signature' />
+
                         <input type='text' name='name' id='name' value={this.state.name} onChange={this.handleInputChange} className='px-2 py-1 border border-blue-400/75 rounded-lg w-full' required />
                     </div>
 
                     <div className='flex space-x-4 items-center'>
                         <FontAwesomeIcon icon='phone' />
+
                         <input type='tel' pattern='[08][0-9]{11}' name='phone' id='phone' value={this.state.phone} onChange={this.handleInputChange} className='px-2 py-1 border border-blue-400/75 rounded-lg w-full' required />
                     </div>
 
@@ -55,11 +57,13 @@ export default class UserItem extends Component {
                 <div className='transition ease-in-out container shadow-lg shadow-slate-300 bg-white/80 rounded-lg w-auto h-auto space-y-4 px-8 py-5  border-2 border-blue-200 hover:-translate-y-1 hover:scale-103' >
                     <div className='flex space-x-3 items-center'>
                         <FontAwesomeIcon icon='signature' />
+
                         <h1>{this.state.name}</h1>
                     </div>
 
                     <div className='flex space-x-4 items-center opacity-60'>
                         <FontAwesomeIcon icon='phone' />
+
                         <h1>{this.state.phone}</h1>
                     </div>
 
