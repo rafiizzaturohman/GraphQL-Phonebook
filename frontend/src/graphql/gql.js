@@ -25,3 +25,21 @@ export const CREATE_CONTACT = gql`
         }
     }
 `;
+
+export const DELETE_CONTACT = gql`
+    mutation deleteContact($id: ID!) {
+        deleteContact(id: $id) {
+            id
+        }
+    }
+`;
+
+export const UPDATE_CONTACT = gql`
+    mutation updateContact($id: ID!, $name: String!, $phone: String!) {
+        updateContact(id: $id, input: {name: $name, phone: $phone}) {
+            id
+            name
+            phone
+        }
+    }
+`;

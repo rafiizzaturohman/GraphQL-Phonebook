@@ -5,7 +5,7 @@ import { CREATE_CONTACT, GET_ALL_CONTACTS } from '../../graphql/gql';
 
 export default function UserForm(props) {
 
-    const [createContact, { data }] = useMutation(CREATE_CONTACT, {
+    const [createContact] = useMutation(CREATE_CONTACT, {
         refetchQueries: [
             { query: GET_ALL_CONTACTS }
         ]

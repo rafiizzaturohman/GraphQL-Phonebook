@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import UserItem from "./UserItem";
-import { useQuery } from "@apollo/client";
-import { GET_ALL_CONTACTS } from "../../graphql/gql";
+import { useMutation, useQuery } from "@apollo/client";
+import { DELETE_CONTACT, GET_ALL_CONTACTS, UPDATE_CONTACT } from "../../graphql/gql";
 
 export default function UserList(props) {
 
@@ -14,7 +14,19 @@ export default function UserList(props) {
         totalPage: 0
     })
 
-    const { data } = useQuery(GET_ALL_CONTACTS, {
+    const [deleteContact] = useMutation(DELETE_CONTACT, {
+        refetchQueries: [
+            { query: GET_ALL_CONTACTS }
+        ]
+    })
+
+    const [updateContact] = useMutation(UPDATE_CONTACT, {
+        refetchQueries: [
+            { query: GET_ALL_CONTACTS }
+        ]
+    })
+
+    useQuery(GET_ALL_CONTACTS, {
         variables: {
             name: props.data.name,
             phone: props.data.phone,
@@ -47,9 +59,8 @@ export default function UserList(props) {
                     <UserItem
                         key={user.id}
                         users={user}
-                    // update={(name, phone) => props.updateContact(user.id, name, phone)}
-                    // remove={() => props.removeContact(user.id)}
-                    // resend={() => props.resendContact(user.id, user.name, user.phone)}
+                        update={(name, phone) => updateContact({ variables: { id: user.id, name: name, phone: phone } })}
+                        remove={() => deleteContact({ variables: { id: user.id } })}
                     />
                 ))
             }
