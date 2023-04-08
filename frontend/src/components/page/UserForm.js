@@ -116,7 +116,7 @@ export default function UserForm(props) {
                         </div>
 
                         <div>
-                            <button className='hidden' type="submit" id="submit">Search</button>
+                            <button className='text-black' type="submit" id="submit">Search</button>
                         </div>
                     </form>
                 </div>

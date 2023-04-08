@@ -13,6 +13,9 @@ module.exports = {
       padding: {
         '26': '6.2rem'
       },
+      spacing: {
+        '26': '6.5rem'
+      },
       scale: {
         '102': '1.02',
         '103': '1.03',

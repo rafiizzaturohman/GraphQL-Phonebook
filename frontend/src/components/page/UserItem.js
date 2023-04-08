@@ -76,10 +76,13 @@ export default function UserItem(props) {
                     </button>
 
                     <button type='button' onClick={props.remove} className='transition hover:text-slate-400 hover:delay-100 font-semibold tracking-wider'>
-                        Delete
+                        {user.sent = true ? 'Delete' : 'Resend'}
                     </button>
                 </div>
             </div>
         )
     }
 }
+
+
+// user.sent = true ? props.remove : props.resend

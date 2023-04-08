@@ -59,8 +59,8 @@ export default function UserList(props) {
                     <UserItem
                         key={user.id}
                         users={user}
-                        update={(name, phone) => updateContact({ variables: { id: user.id, name: name, phone: phone } })}
                         remove={() => deleteContact({ variables: { id: user.id } })}
+                        update={(name, phone) => updateContact({ variables: { id: user.id, name: name, phone: phone } })}
                     />
                 ))
             }

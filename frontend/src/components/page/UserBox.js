@@ -23,7 +23,7 @@ export default function UserBox(props) {
 
     return (
         <div>
-            <div className='grid gap-8 my-28 mx-20 md:grid-cols-none xl:grid-cols-2'>
+            <div className='grid gap-8 my-26 mx-20 md:grid-cols-none xl:grid-cols-2'>
                 {/* CARD FORM START */}
                 <div className='sticky'>
                     <div className='shadow-2xl shadow-slate-300 bg-white/80 rounded-lg'>
