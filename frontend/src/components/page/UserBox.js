@@ -29,12 +29,12 @@ export default function UserBox(props) {
                     <div className='shadow-2xl shadow-slate-300 bg-white/80 rounded-lg'>
                         <div className='container py-16 px-24 space-y-10'>
                             <UserForm
-                                search={search}
-                                reset={searchReset}
-                                nameSet={setName}
-                                phoneSet={setPhone}
                                 name={name}
                                 phone={phone}
+                                nameSet={setName}
+                                phoneSet={setPhone}
+                                search={search}
+                                reset={searchReset}
                             />
                         </div>
                     </div>

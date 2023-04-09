@@ -9,8 +9,7 @@ export default function UserForm(props) {
         refetchQueries: [
             { query: GET_ALL_CONTACTS }
         ]
-    });
-
+    })
     const [user, setUser] = useState({
         name: '',
         phone: ''
