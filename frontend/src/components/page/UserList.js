@@ -9,7 +9,7 @@ export default function UserList(props) {
         value: []
     })
 
-    console.log(user.value)
+    const [temporaryId, setTemporaryId] = useState('')
 
     const [params, setParams] = useState({
         page: 1,
